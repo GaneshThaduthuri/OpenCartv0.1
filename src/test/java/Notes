@@ -313,7 +313,7 @@ git add *.java  -> for adding all java files only
 git commit -m "commit message"
 
 5) create a repository in git hub and copy url
-https://github.com/GaneshThaduthuri/OpenCartv0.1.git-->repo url
+https://github.com/GaneshThaduthuri/OpenCartv0.1.git   -->repo url
  git remote add origin "https://github.com/GaneshThaduthuri/OpenCartv0.1.git"  --> for creation
  
 6) push localgit code to remote repository .
@@ -330,7 +330,17 @@ day2 if some more testcases were added. then
 now no need to run every above mentioned commands 
 skip 1 ,2 and 5th commadns
 
+ive used only 
+git add -A
+git commit -m "2nd commit"
+git push origin master
 
+now im download something from git to my local:
+-------------------------------------------------
+if you have added some files under git hub then you can download using
+
+git pull "name of the repo url "
+git pull "https://github.com/GaneshThaduthuri/OpenCartv0.1.git"
  
  
  

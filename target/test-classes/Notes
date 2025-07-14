@@ -304,9 +304,31 @@ git config --global user.email "your email"
 
 git status it will show the latest 
 
+3) Adding files/folders to staging/indexing..
 git add -A  -> for adding all the files
 git add filename -> adding individual file
 git add *.java  -> for adding all java files only
+
+4)commit the code into local(git) repository
+git commit -m "commit message"
+
+5) create a repository in git hub and copy url
+https://github.com/GaneshThaduthuri/OpenCartv0.1.git-->repo url
+ git remote add origin "https://github.com/GaneshThaduthuri/OpenCartv0.1.git"  --> for creation
+ 
+6) push localgit code to remote repository .
+git push origin master
+
+sometimes after push comand it will ask git password / token
+profile>devsetting>personalAccess_tokens>tokens classic> generate new token.
+
+
+round2:
+---------
+day2 if some more testcases were added. then 
+
+now no need to run every above mentioned commands 
+skip 1 ,2 and 5th commadns
 
 
  

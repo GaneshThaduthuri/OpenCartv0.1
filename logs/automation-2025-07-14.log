@@ -1,0 +1,65 @@
+00:22:09.329 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Practices on Eclipse\OpenCartV0.1\master.xml
+
+11:02:54.430 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Practices on Eclipse\OpenCartV0.1\gridDocker.xml
+
+11:02:56.235 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:09:10.649 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Practices on Eclipse\OpenCartV0.1\gridDocker.xml
+
+11:09:12.680 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:10:15.980 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Practices on Eclipse\OpenCartV0.1\gridDocker.xml
+
+11:10:17.628 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:11:01.625 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Practices on Eclipse\OpenCartV0.1\gridDocker.xml
+
+11:11:03.314 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:14:13.211 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Practices on Eclipse\OpenCartV0.1\gridDocker.xml
+
+11:14:21.284 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:14:34.359 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:14:38.357 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+11:14:38.368 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:15:44.008 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Practices on Eclipse\OpenCartV0.1\gridDocker.xml
+
+11:15:49.414 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:16:02.015 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:16:04.787 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+11:16:04.797 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:16:07.556 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+11:16:07.564 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:16:19.658 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:16:22.882 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+11:16:22.887 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+11:16:26.365 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+13:15:38.597 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+13:15:51.568 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+13:15:54.286 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+13:15:54.298 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+13:15:57.072 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+13:15:57.090 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+13:16:09.290 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+13:16:11.719 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+13:16:11.725 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+13:16:14.599 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+16:19:36.667 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:19:48.463 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:19:50.809 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+16:19:50.818 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:19:52.803 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+16:19:52.808 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:20:04.640 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:20:06.754 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+16:20:06.761 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:20:08.639 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+16:30:45.653 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:30:57.898 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:31:00.609 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+16:31:00.622 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****
+16:31:02.481 [main] INFO  testCases.TC003LoginTestDDT - **** Finished TC003LoginTestDDT *****
+16:31:02.486 [main] INFO  testCases.TC003LoginTestDDT - **** Starting TC003LoginTestDDT *****

@@ -1,0 +1,318 @@
+Page object model:
+------------------
+weblocators+ actions whatever weblocators are present just action of them
+
+Testcases Folder:
+-----------------
+under testcases folder only write validations of that page object classses
+
+Log4J:
+------
+logging - record all the events in thhe form of Text.
+
+
+
+
+advantages:
+logging is used to track what is going there. in realtime they can monitor what is happeninig 
+for project or code by sitting backend
+-its a security mechanism
+-in our automation all kind of actions will logs into logfile
+it will usefull when we are getting issues
+
+Log levels:
+---------
+All<Trace<Debug<Info<Warn<Error<Fatal<off - we can set this 
+
+Apenders: where excatly we generate logs (console/file)
+Loggers: what type of logs generate(All<Trace<Debug<Info<Warn<Error<Fatal<off)
+we can give the log file details to developers for enquiry of defect.
+
+for using logger we need Log4J2.xml under src/test/resourcces.
+we need dependencies + config file(XML file)
+download frm log4j website and do small modifications
+and connect that log4j to our project (for our projet Base class is the common for all testcases so uconnect there
+
+3 steps:
+--------
+prepare/download loog4j config xml file.
+attach that xml to our project you can add to Base class using Logger(class)
+use that Logger class reference and log modes(info,debug,trace,fatal) as we want in testcase.
+logger.info("hi ganesh how are you");
+logger.debug("test failed. you need to check in further..)
+
+
+
+Datadrivern testing and data provider:
+------------------------------------------
+data provider and datadriven both are same
+for short amount of data use data providers directly using kay and value pair
+for long data we need to follow all the date with excel(DDT)
+
+
+
+datadriven testing we need to use data providers concept
+
+screenshots procedure we need to create a utility and listerners concept.
+
+Selenium GRID:
+---------------
+
+we can able to handle our execution on remote browsers and diffrent OS.
+for that we need to setup something in our system.
+
+HUB+ NODES COMBINATION IS CALLED GRID
+HUB MEANS SERVER+ LOCAL MACHINE , NODES MEASN MULTIPLE OPERATING SYSTEMS + DIFFRENT BROWSERS
+
+we can achieve grid concept but we need diffrent machines (mac,linux) its very costly so earlier they were used VM wares
+
+but to avoid vm as well the Docker was introduced 
+dockjer is best tool to use GRID.
+
+docker-->image-->container-->all setup-->we can crearte node.
+
+Grid env setup:
+---------------
+2ways
+1.create vm's and use those diffrent OS
+2.download docker and manage remaining.(container...)
+
+1.download latest selenium grid from selenium website
+  run this command to start the grid:
+  java -jar selenium-server-4.15.0.jar standalone
+  
+  once ran at last the result giving one url to access grid like this http://192.168.208.122:4444
+  we can use http://localhost:4444  as well if we want......
+  
+  this is the code we need to add to the @BeforeClass in baseclass
+  
+  if(p.getProperty("execution_env").equalsIgnoreCase("remote"))
+		{
+			DesiredCapabilities capabilities=new DesiredCapabilities();
+			
+			//os
+			if(os.equalsIgnoreCase("windows"))
+			{
+				capabilities.setPlatform(Platform.WIN11);
+			}
+			else if (os.equalsIgnoreCase("mac"))
+			{
+				capabilities.setPlatform(Platform.MAC);
+			}
+			else
+			{
+				System.out.println("No matching os");
+				return;
+			}
+			
+			//browser
+			switch(br.toLowerCase())
+			{
+			case "chrome": capabilities.setBrowserName("chrome"); break;
+			case "edge": capabilities.setBrowserName("MicrosoftEdge"); break;
+			default: System.out.println("No matching browser"); return;
+			}
+			
+			driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities);
+		}
+		
+	now it will launch our test activities under grid environment instead Local.
+	make sure we need to select execution_env as remote in properties file
+	execution_env="remote"
+	
+	
+Docker:
+---------
+containarization - remote repository
+it contains many noof images(software) 
+image is high level container canbe extracted from images..
+
+
+download docker from chrome
+oncedownload restart> check the version
+docker version-->enter
+docker-compose version -->enter
+
+docker basic commands:
+docker -v
+docker -help
+docker Login
+docker images
+docker pull ubuntu   -> if i want to download docker ubantu image   (this is hub)
+docker pull selenium/node-chrome  -> this is for selenium chrome image   (this is node)
+docker pull selenium/node-firefox  ->this is for selenium forefox image  (this is node)
+docker rmi imageid  -> if i want to delete aany image need to provide image id  rmi means removeimage
+
+
+from this images we need to extract container.
+docker ps -> will show containers list
+docker run ubuntu -> it will create container from image
+if for ex... the ubantu image not already downloaded by docker pull image. then this docker run automatically download image and
+will create container (this can manage 2 tasks)
+docker start ubuntu
+docker stop ubuntu
+docker rm -> for remove container
+
+
+docker run -it ubuntu  ->
+
+docker stats   -> this will return docker commads status
+docker ps
+docker system df
+
+additional commands:
+
+docket stats
+docker system df
+docker system prune -f
+docker run <<container id>>
+
+
+
+
+we can use 3 conatainers in our project:
+----------------------------------------
+1.Hub
+2.linux-firefoix
+3.linux-chrome
+
+
+
+
+as of now i ve downloaded 1 hub 2 nodes
+docker pull ubuntu   -> if i want to download docker ubantu image   (this is hub)
+docker pull selenium/node-chrome  -> this is for selenium chrome image   (this is node)
+docker pull selenium/node-firefox  ->this is for selenium forefox image  (this is node)
+
+if i want to check status
+docker images   -> this will show list of images downloaded
+
+now we need to link a connection between them
+create a netework
+
+docker network create grid  -> use this command
+docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub
+the above command will provide network under containers section for selenium hub
+
+now we need to connect nodes to the hub using below commands
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-chrome
+this is for chrome node
+
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-firefox
+this is for firefox node
+
+ now check which commands are currently running using 
+ docker ps
+ 
+ if we want to check what are the nodes are attached 
+ http://localhost:4444/ui/
+ 
+ now just chnage the xml at os option as windows to linx now our tests will run on linux latform instead of windows
+
+after all done now stop the commands
+
+another way:
+------------
+grid introduced other way as we are manually running every hub and nodes in future 
+
+there is another way of creating everything in a single way by using one config file...
+docker-compose.yaml   name of the file....
+
+add that file to our project and run that file through path by using command prompt
+
+now run everything under grid as like earlier xml run
+
+
+last that yaml file one is pending....
+
+
+now running our testcases through cmd by using surefire plugin:
+----------------------------------------------------------------
+here 2 types of plugins for cmd execution
+1.maven compiler plugin
+2.maven sutrfire plugin
+ just goto maven and add those 2 pugins to pom.xml and run the pm.xml  using maven run option now that xml file will run through pom.xml
+ 
+ if we want to run our testcases from cmd level we need maven help while we are executing on exlipse we aer involving maven dependencies and plugins
+ for local cmd run we need maven in os level so need to download from chrome.
+ download maven from chrome 
+ adn just copy till bin path and add that path under env varibales 2nd box path thats it.
+ 
+ if i want to run my testcases through cmd then just take project path and add that to cmd like
+ cd C:\Practices on Eclipse\OpenCartV0.1
+ mvn clean test  -> for cleaning the project and execute after clean (clean+ execution)
+ 
+ bat file - for windows and all the commands and save some where if you want you just click the bat file...
+ 
+ pom.xml>testng.xml>testcases>page objects/utility/testdata
+ 
+ this Pom.xml can be execute via compiler,eclipse,.batch file and also we can execute via jenkins tool... 
+ 
+ 
+ GIT and Jenkins:
+ -------------------
+ This is CI/CD part  
+ 
+ git:
+ ----
+ git has 2 parts git and github
+ git means local repository
+ git hub means remote repository
+ 
+ dev team work:
+ ---------------
+ everydev by daily basis need to pushcode from git to github means local repository to remote repository
+ the process of sharing local to git is called commit (remember not to git to github (its local machine to git))
+ the process of sharing git to github is called Push.
+ 
+ devops team work:
+ ------------------
+ 1.build creation
+ 2.run automation
+ 3.build certification
+ 
+ these activities were done by devops once they dev guys checkin therir chnages
+ devops guys run everything and give reports by 9 am 
+ 
+ Testing team work:
+ ------------------
+ Testing team download the latest build and automate some more test cases and added to the bgit hub repo by eod 
+ 
+ then the cycle run continuously thats why this name is called ci/CD
+ 
+ 
+ pre-requisites:
+ ----------------
+ GIT instalattion
+ create a account with github 
+ 
+ 
+WORKFLOW:
+---------
+there is a doc availble
+
+ open project directory and open git bash cmd 
+ 
+1)git inti  -> create a local repository   (one time work)
+Initialized empty Git repository in C:/Practices on Eclipse/OpenCartV0.1/.git/
+IT WAS CREATE A LOCAL REEPOSITORY UNDER PPROJECT FOLDER but hidden if we want to see then rightclick
+view> hidden files>ok it will appear .git folder
+
+2) provide user info to git repo   (one time work)
+git config --global user.name "your Name"
+git config --global user.email "your email"
+
+git status it will show the latest 
+
+git add -A  -> for adding all the files
+git add filename -> adding individual file
+git add *.java  -> for adding all java files only
+
+
+ 
+ 
+ 
+
+		
+
+ 

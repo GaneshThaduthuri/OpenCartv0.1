@@ -1,0 +1,11 @@
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\pageObjects\HomePage.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\pageObjects\LoginPage.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\pageObjects\MyAccountPage.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\pageObjects\RegistrationPage.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\testBase\BaseClass.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\testCases\TC001_ValidateRegistration.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\testCases\TC002_LoginValidation.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\testCases\TC003LoginTestDDT.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\utilities\DataProviders.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\utilities\ExcelUtility.java
+C:\Practices on Eclipse\OpenCartV0.1\src\test\java\utilities\ExtentReportManager.java
